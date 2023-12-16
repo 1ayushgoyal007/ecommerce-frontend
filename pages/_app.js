@@ -8,8 +8,6 @@ export default function MyApp({ Component, pageProps }) {
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
       <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-      <script src="https://www.illustrateddailynews.com/API/assets/js/jquery.min.js"></script>
-      <script src="https://www.illustrateddailynews.com/API/assets/js/mmenu.js"></script>
       <script async >
         {function toggleNav() {
           const nav = document.querySelector('nav');

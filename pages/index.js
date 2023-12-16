@@ -3,17 +3,14 @@ import Head from 'next/head';
 import NavBar from '../Components/NavBar';
 import Footer from '../Components/Footer';
 import axios from 'axios';
-import { useRouter } from 'next/router';
-
+import { anchorNavigate } from '@/utils/helpers';
 
 const HomePage = (data) => {
 
     const records = data.data?.records || [];
-    const router = useRouter();
 
     const handleView = (id) => {
-        console.log('id', id);
-        router.push('/wer');
+        anchorNavigate(`/${id}`)
     }
 
     return (
@@ -36,7 +33,7 @@ const HomePage = (data) => {
             <section style={{ paddingBottom: '8rem' }} >
 
                 {records.map((item) => {
-                    return <div class="product" key={item._id} style={{ width: '340px', height: "510px", overflow: 'auto', display: 'flex', flexDirection: "column", justifyContent: "space-between" }}>
+                    return <div class="product" key={item._id} style={{ width: '340px', height: "490px", overflow: 'auto', display: 'flex', flexDirection: "column", justifyContent: "space-between" }}>
                         <img src={item.image_src} alt="Product 1" style={{ width: "320px", height: "240px", objectFit: 'contain' }} />
                         <h2>{item.name}</h2>
                         <p>{item.description.slice(0, 100)}</p>

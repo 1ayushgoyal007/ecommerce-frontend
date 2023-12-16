@@ -3,19 +3,14 @@ import React from 'react';
 import Head from 'next/head';
 import Footer from '../../Components/Footer';
 import NavBar from '../../Components/NavBar';
+import { Categories } from '@/utils';
+import { anchorNavigate } from '@/utils/helpers';
 
-const Category = ({ metaData }) => {
+const Category = () => {
 
-  const categories = [
-    'Electronics',
-    'Clothing',
-    'Books',
-    'Home Decor',
-    'Sports & Outdoors',
-    'Beauty',
-    'Toys & Games',
-    'Automotive',
-  ];
+  const handleNavigate = (item) => {
+    anchorNavigate(`/category/${item.value}`)
+  }
 
   return (
     <>
@@ -26,17 +21,14 @@ const Category = ({ metaData }) => {
       </Head>
       <NavBar />
       <section style={{ paddingBottom: 0 }} >
-        <h2 >
-          Categories
-
-        </h2>
+        <h2> Categories </h2>
       </section>
 
       <section style={{ display: 'flex', flexDirection: "column", paddingTop: 0 }} >
-        {categories.map(item => {
+        {Categories.map(item => {
           return <div>
-            <div class="product" key={item} style={{ width: "15rem" }} >
-              <h2>{item}</h2>
+            <div class="product" key={item} style={{ width: "15rem" }} onClick={() => handleNavigate(item)} >
+              <h2>{item.label}</h2>
             </div>
           </div>
         })}

@@ -47,76 +47,7 @@ const Header = () => {
     setSubsFlag(true);
     // setSearch();
   };
-  const inputData = (event) => {
-    setSearch(event.target.value);
-  }
-  const subscribeFunc = (event) => {
-    const { name, value } = event.target;
-    setSubscribeData((valuePre) => {
-      return {
-        ...valuePre,
-        [name]: value
-      }
-    });
-    console.log("oriental", subscribeData);
 
-  }
-  // const history = useHistory();
-  const getSearchData = () => {
-    // alert('rr');
-
-    let path = `/search/` + search;
-    setShow(false);
-    // history.push(path);
-    // window.open("/category/india/"+search)
-  }
-  const submitSubscribe = (event) => {
-    event.preventDefault();
-    const subsData = subscribeData;
-    //      axios.post('https://www.illustrateddailynews.com/API/subscribe.php', {
-    //   method: 'POST',
-    //   // headers: { 'Content-Type': 'application/json' },
-    //   body: JSON.stringify(subsData),
-    // })
-    //   .then(response => response.json())
-    //   .then(data => console.log(data))
-    //   .catch(error => console.error(error));
-
-    axios.post(`/subscribe.php?name=${subsData.name}&&email=${subsData.email}`)
-      .then(res => {
-
-        console.log("Your new array of modified objects here")
-        // setName((data)=>{
-        //
-        //   // return [...data, cateData];
-        // });
-      })
-      .catch(err => { console.log('Google api calendar error', err) })
-
-
-
-    alert('Submit successfully!');
-    setSubscribeData({
-      name: "",
-      email: ""
-    });
-
-    setSubsFlag(false);
-    console.log("tester", subsData);
-
-    // let path = `/search/`+search;
-    // setSubsFlag(false);
-    // history.push(path);
-  }
-
-
-  const handleNavigate = () => {
-    try {
-      window.location.replace(window.location.host)
-    } catch (error) {
-      console.log('error', error);
-    }
-  }
   return (
 
     <>
@@ -129,9 +60,7 @@ const Header = () => {
               </span>
             </div>
             <div className="col-10 col-md-4 text-center pt-2 pb-2">
-              <Link href="/" >
-                <img onError={(e) => (e.target.src = 'https://www.illustrateddailynews.com/API/assets/images/Logo.png')} src="https://www.illustrateddailynews.com/API/assets/images/Logo.png" />
-              </Link>
+
               <div className="date-and-time">
                 {date}
                 <div className="date-and-time-sep"></div>
@@ -152,7 +81,6 @@ const Header = () => {
                     <a href="http://twitter.com/I_DailyNews" target="_blank"><i className="fa fa-twitter"></i></a>
                     <a href="https://youtube.com/@illustrateddailynews3802" target="_blank"><i className="fa fa-youtube"></i></a>
                     <a href="https://www.instagram.com/illustrateddailynews31/?igshid=ZDdkNTZiNTM%3D" target="_blank"><i className="fa fa-instagram"></i></a>
-                    <a href="http://www.kooapp.com/profile/illustrateddailynews"><img onError={(e) => (e.target.src = 'https://www.illustrateddailynews.com/API/assets/images/Logo.png')} src="https://www.illustrateddailynews.com/API/assets/images/Koo-icon1.png" /></a>
                   </div>
                 </li>
               </ul>
