@@ -61,7 +61,8 @@ const CreateProduct = () => {
                 flexDirection: 'column',
                 maxWidth: '400px',
                 margin: 'auto',
-                paddingTop: "2rem"
+                paddingTop: "2rem",
+                height: '100vh'
             }}
             onSubmit={handleSubmit}
         >

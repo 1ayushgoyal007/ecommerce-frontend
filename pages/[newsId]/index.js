@@ -3,10 +3,15 @@ import Head from 'next/head'
 import Footer from '../../Components/Footer';
 import NavBar from '../../Components/NavBar';
 import axios from 'axios';
+import { anchorNavigate } from '@/utils/helpers';
 
 const News = ({ data }) => {
 
-  console.log('data____', data);
+
+  const handleButtonClick = (link) => {
+    anchorNavigate(data.referral, true)
+  }
+
   return (
     <>
 
@@ -30,7 +35,7 @@ const News = ({ data }) => {
           {data.description}
         </p>
 
-        <button >
+        <button onClick={handleButtonClick} >
           Buy Now
         </button>
       </div>
