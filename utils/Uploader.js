@@ -36,10 +36,12 @@ export class Uploader {
 
     // starting the multipart upload request
     start() {
+        "use server";
         this.initialize();
     }
 
     async initialize() {
+
         try {
             console.log("start______");
             // adding the the file extension (if present) to fileName
