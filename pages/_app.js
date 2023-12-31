@@ -196,6 +196,51 @@ export default function MyApp({ Component, pageProps }) {
             font-size: 1em;
             cursor: pointer;
           }
+
+          .section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+          }
+      
+          form {
+            display: flex;
+            flex-direction: column;
+            width: -webkit-fill-available;
+            padding:1rem;
+          }
+
+          .contaiin{
+            overflow:auto;
+            height:60vh;
+          }
+      
+          .map{
+            height:20rem;
+            padding:1rem;
+            margin-bottom:10rem;
+          }
+          label {
+            font-size: 18px;
+            margin-bottom: 8px;
+          }
+      
+          input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+          }
+      
+          textarea {
+            height: 100px;
+          }
+      
+      
         
       
         `}</style>

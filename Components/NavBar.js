@@ -16,8 +16,9 @@ const NavBar = ({ active }) => {
             <h1>E-Commerce Store</h1>
         </header>
         {loaded ? <nav>
-            <a href="/" className={window.location.pathname.includes('category') ? "" : "active"}>Home</a>
+            <a href="/" className={(window.location.pathname.includes('contact') || window.location.pathname.includes('category')) ? "" : "active"}>Home</a>
             <a href="/category" className={!window.location.pathname.includes('category') ? "" : "active"} >Category</a>
+            <a href="/contact" className={!window.location.pathname.includes('contact') ? "" : "active"} >Contact</a>
         </nav> : null}
 
     </>
